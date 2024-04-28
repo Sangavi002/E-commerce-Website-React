@@ -4,7 +4,7 @@ import {Box,Heading,Image,Center,Button} from '@chakra-ui/react';
 
 const ProductDetail = () => {
     const {userId}  = useParams();
-    console.log(userId)
+  
     const [products, setProducts] = useState({});
 
     useEffect(() => {
@@ -13,6 +13,8 @@ const ProductDetail = () => {
         .then((productData) => setProducts(productData))
         .catch((error) => console.log(error))
     });
+
+   
     
     return (
         <>
@@ -25,7 +27,7 @@ const ProductDetail = () => {
                     <Heading size='xs' color='#AF8260' fontWeight='500'>{products.description}</Heading>
                     <Heading size='sm'mt={5} color='#803D3B'>Category: {products.category}</Heading>
                     <Heading size='sm'mt={2} color='#803D3B'>Price: {products.price}</Heading>
-                    <Button colorScheme='green' size='sm' mt={3}>Add to Cart</Button>
+                    <Button colorScheme='green' size='sm' mt={3} >Add to Cart</Button>
                 </Box>
             </Box>
         </>
